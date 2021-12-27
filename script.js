@@ -383,3 +383,87 @@ console.log(diff_days(dt1, dt2));
 dt1 = new Date("October 13, 2014 08:11:00");
 dt2 = new Date("October 19, 2014 11:13:00");
 console.log(diff_days(dt1, dt2));
+
+
+// Write a JavaScript function to get time differences in years between two dates.   
+// Test Data :
+// dt1 = new Date("June 13, 2014 08:11:00");
+// dt2 = new Date("October 19, 2017 11:13:00");
+// console.log(diff_years(dt1, dt2));
+// 3
+
+function diff_years(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+   diff /= (60 * 60 * 24);
+  return Math.abs(Math.round(diff/365.25));
+   
+ }
+
+dt1 = new Date(2014,10,2);
+dt2 = new Date(2014,10,11);
+console.log(diff_years(dt1, dt2));
+
+dt1 = new Date("June 13, 2014 08:11:00");
+dt2 = new Date("October 19, 2017 11:13:00");
+console.log(diff_years(dt1, dt2));
+
+
+
+// Write a JavaScript function to get the week start date.  
+
+function startOfWeek(date)
+  {
+    var diff = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
+  
+    return new Date(date.setDate(diff));
+ 
+  }
+
+dt = new Date(); 
+
+console.log(startOfWeek(dt).toString());
+
+
+// Write a JavaScript function to get the week end date.  
+
+function endOfWeek(date)
+  {
+     
+    var lastday = date.getDate() - (date.getDay() - 1) + 6;
+    return new Date(date.setDate(lastday));
+ 
+  }
+
+dt = new Date(); 
+
+console.log(endOfWeek(dt).toString());
+
+
+// Write a JavaScript function to get the month start date.
+
+function startOfMonth(date)
+  {
+     
+   return new Date(date.getFullYear(), date.getMonth(), 1);
+ 
+  }
+
+dt = new Date(); 
+
+console.log(startOfMonth(dt).toString());
+
+
+// Write a JavaScript function to get the month end date.  
+
+function endOfMonth(date)
+  {
+     
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+ 
+  }
+
+dt = new Date(); 
+
+console.log(endOfMonth(dt).toString());
