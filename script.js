@@ -95,3 +95,21 @@ console.log(minutes_with_leading_zeros(dt));
 
 dt = new Date(1989, 10, 1); 
 console.log(minutes_with_leading_zeros(dt));
+
+
+// Write a JavaScript function to get seconds with leading zeros (00 through 59).   
+// Test Data :
+// dt = new Date(1989, 10, 1);
+// console.log(seconds_with_leading_zeros(dt));
+// "00"
+
+function seconds_with_leading_zeros(dt) 
+{ 
+  return (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes();
+}
+
+dt = new Date(); 
+console.log(seconds_with_leading_zeros(dt)); 
+
+dt = new Date(1989, 10, 1); 
+console.log(seconds_with_leading_zeros(dt));
